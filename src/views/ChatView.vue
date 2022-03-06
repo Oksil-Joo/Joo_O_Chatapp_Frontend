@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <main class="loginCon">
     <h1 class="welcome-message">welcome {{ ChatUserName }}!</h1>
 
     <section id="chat">
@@ -30,7 +30,7 @@
           :disabled="messageContent"
           :class="{'disabled' : messageContent}"
           >
-            <i class="fa fa-envelope" style="font-size:48px;color:black"></i>
+            <i class="fa fa-envelope" style="font-size:48px;color:#9BB731"></i>
           </button>
         </section>
       </section>
@@ -68,6 +68,7 @@ export default {
     this.socket.on('TEST_FOR_EVENT', (data) => {
       console.table(data);
     })
+  
   },
 
   computed: {
@@ -96,7 +97,7 @@ export default {
   methods: {
     sendMessage() {
       this.socket.emit('SEND_MESSAGE', { user: this.ChatUserName || "Anonymous", message: this.message })
-
+     
       this.message = '';
     },
 
@@ -116,21 +117,34 @@ export default {
 </script>
 
 <style lang="scss">
-.disabled { opacity: 0.4; }
+
+body {
+
+    background-color: #9BB731;
+    margin: 0 auto;
+    padding: 0 auto;
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+}
+.disabled { opacity: 0.9; }
 
 #chat { 
     display: grid;
     grid-template-columns: 1fr 3fr;
 }
-
+footer {
+  text-align: center;
+  color: white;
+}
 .welcome-message {
-    font-size: 1.3em;
+    font-size: 3 em;
     margin: 0.8em 0;
     padding-left: 0.8em;
+    color: #999;
 }
 
 #chat-users-ui {
-    border-right: thin solid #333;
+    border-right: thin solid #9BB731;
 }
 
 #chat-users-ui, #chat-messages-ui {
@@ -138,19 +152,22 @@ export default {
     position: relative;
 }
 
-#chat-users-ui {
-    h2 { font-size: 1.3em; }
+#chat-users-ui h2 {
+     font-size: 1.3em; 
 }
 
-#current-users { margin-top: 1em; }
+#current-users { margin-top: 1em; 
+color: #999;
+}
 
 #text-wrapper { position: relative; }
 
 textarea { 
     width: 70%; 
     min-height: 100px;
-    border: thin solid border-color blue ;
-    border-radius: round;
+    border: 2px solid #9BB731 ;
+    background-color: rgb(250, 255, 214); 
+    border-radius: 10px;
     margin-top: 1em;
     padding: 1em;
     font-size: 1em;
@@ -162,12 +179,12 @@ textarea {
     top: -60px;
     left: 10px;
     border: none;
-    width: 50px;
+    width: 70px;
     height: 50px;
     font-size: 1.5em;
     text-align: center;
-    border-radius: round;
+    border-radius: 10px;
 
-    i { color: blue; }
+    i { color: #9BB731; }
 }
 </style>

@@ -16,7 +16,7 @@ Node, Express, and Vue CLI are used with socket.io to create live interactive ch
 + [node.js](https://www.php.net/manual/en/functions.user-defined.php)
 + [cdnjs.com](https://cdnjs.com/libraries/font-awesome)
 + [webpack](https://webpack.js.org/loaders/sass-loader/)
-
++ [socket.io](https://socket.io/docs/v4/server-api/#socketdisconnectclose)
 
 
 ## Mit License

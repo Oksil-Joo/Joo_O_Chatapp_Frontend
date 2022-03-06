@@ -25,30 +25,27 @@ export default {
         float: left;
         clear: both;
         width: 51%;
-        background-color: rgb(238, 165, 218);
-
-        color: rgb(255, 0, 183);
-
+        background-color: rgb(243, 255, 10);
         margin-bottom:1em;
         padding: 1em;
-        border-radius: 50%;
+        border-radius: 10px;
         display: flex;
 
-        .user-initial {
-            position: relative;
-            height: 48px;
-            flex: 0 0 48px;
-            background-color: rgab(255, 255, 255, 0.5);
-            border-radius: 50%;
-            text-transform: uppercase;
-            font-size: 2em;
+  .user-initial {
+        position: relative;
+         height: 48px;
+         flex: 0 0 48px;
+         background-color: rgab(255, 255, 255, 0.5);
+         border-radius: 50%;
+        text-transform: uppercase;
+        font-size: 2em;
 
-            span {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                -moz-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
+        span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -moz-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
             }
 
         }
